@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="top">
+        <div class="title"><h1>My Blog</h1></div>
+    </div>
+        <div class="content">
+            {% for blog_posts in data: %}
+                {% if blog_posts.id == num: %}
+                    <div class="card card-post">
+                        <h2>{{blog_posts.title}}</h2>
+                        <p class="text">{{blog_posts.body}}</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+</div>
+</body>
+<footer>
+    <p>Copyright &copy; {{current_year}} Laury Ruz </p>
+</footer>
+</html>
